@@ -4,15 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <style>
+      @import "./style.css";
+    </style>
   </head>
   <body>
     <div id="app">
       <h1>Hello Vite!</h1>
+      <img src="img.jpeg" alt="contoh foto" style="width: 100px; height: auto" />
     </div>
     <script type="module">
-      console.info("Vite is running...");
       import { sayHello } from "./say-hello.js";
+      import { v4 } from "uuid";
+      import person from "./person.json";
+      import a from "./hello.txt?raw";
+
+      console.info("Vite is running...");
       sayHello("Egi");
+      console.info(v4());
+      console.info(person);
+      console.info(`Nama: ${person.nama}, Usia: ${person.usia}, Hobi: ${person.hobi}`);
+      console.info(a);
     </script>
   </body>
 </html>
